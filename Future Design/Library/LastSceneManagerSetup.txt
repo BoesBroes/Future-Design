@@ -1,0 +1,5 @@
+sceneSetups:
+- path: Assets/#NVJOB Water Shaders V2/Example Scenes/Scenes/Example 0.unity
+  isLoaded: 1
+  isActive: 1
+  isSubScene: 0
