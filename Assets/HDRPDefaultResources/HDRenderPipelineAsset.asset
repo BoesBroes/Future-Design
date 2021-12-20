@@ -14,13 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_RenderPipelineResources: {fileID: 0}
   m_RenderPipelineRayTracingResources: {fileID: 0}
-  m_DefaultVolumeProfile: {fileID: 0}
+  m_DefaultVolumeProfile: {fileID: 11400000, guid: 1c6ceded5213144c5870d3362b75a27a, type: 2}
   m_LensAttenuation: 0
   m_DefaultLookDevProfile: {fileID: 0}
+  m_RenderPipelineEditorResources: {fileID: 0}
   m_RenderingPathDefaultCameraFrameSettings:
-    bitDatas:
-      data1: 72198262773251917
-      data2: 13763000468760363032
+    bitDatas: {}
     lodBias: 1
     lodBiasMode: 0
     lodBiasQualityLevel: 0
@@ -30,11 +29,10 @@ MonoBehaviour:
     sssQualityMode: 0
     sssQualityLevel: 0
     sssCustomSampleBudget: 20
+    sssResolvedSampleBudget: 0
     materialQuality: 0
   m_RenderingPathDefaultBakedOrCustomReflectionFrameSettings:
-    bitDatas:
-      data1: 135310754214733
-      data2: 4539628428684427288
+    bitDatas: {}
     lodBias: 1
     lodBiasMode: 0
     lodBiasQualityLevel: 0
@@ -44,11 +42,10 @@ MonoBehaviour:
     sssQualityMode: 0
     sssQualityLevel: 0
     sssCustomSampleBudget: 20
+    sssResolvedSampleBudget: 0
     materialQuality: 0
   m_RenderingPathDefaultRealtimeReflectionFrameSettings:
-    bitDatas:
-      data1: 139923391782733
-      data2: 13763000465807638544
+    bitDatas: {}
     lodBias: 1
     lodBiasMode: 0
     lodBiasQualityLevel: 0
@@ -58,7 +55,9 @@ MonoBehaviour:
     sssQualityMode: 0
     sssQualityLevel: 0
     sssCustomSampleBudget: 20
+    sssResolvedSampleBudget: 0
     materialQuality: 0
+  <frameSettingsHistory>k__BackingField: 0
   m_RenderPipelineSettings:
     supportShadowMask: 1
     supportSSR: 0
@@ -126,7 +125,6 @@ MonoBehaviour:
       reflectionProbeFormat: 74
       skyReflectionSize: 256
       skyLightingOverrideLayerMask:
-        serializedVersion: 2
         m_Bits: 0
       supportFabricConvolution: 0
       maxDirectionalLightsOnScreen: 16
@@ -205,16 +203,16 @@ MonoBehaviour:
       - 8
       - 13
       DoFResolution: 040000000200000001000000
-      DoFHighQualityFiltering: 000101
-      DoFPhysicallyBased: 000000
+      DoFHighQualityFiltering: 
+      DoFPhysicallyBased: 
       MotionBlurSampleCount: 04000000080000000c000000
       BloomRes: 040000000200000002000000
-      BloomHighQualityFiltering: 000101
-      BloomHighQualityPrefiltering: 000001
+      BloomHighQualityFiltering: 
+      BloomHighQualityPrefiltering: 
       ChromaticAberrationMaxSamples: 03000000060000000c000000
     lightSettings:
       useContactShadow:
-        m_Values: 000001
+        m_Values: 
         m_SchemaId:
           m_Id: With3Levels
     maximumLODLevel:
@@ -230,9 +228,9 @@ MonoBehaviour:
         m_Id: With3Levels
     lightingQualitySettings:
       AOStepCount: 040000000600000010000000
-      AOFullRes: 000001
+      AOFullRes: 
       AOMaximumRadiusPixels: 200000002800000050000000
-      AOBilateralUpsample: 000101
+      AOBilateralUpsample: 
       AODirectionCount: 010000000200000004000000
       ContactShadowSampleCount: 060000000a00000010000000
       SSRMaxRaySteps: 100000002000000040000000
@@ -241,7 +239,7 @@ MonoBehaviour:
       - 3
       - 20
       RTAOSampleCount: 010000000200000008000000
-      RTAODenoise: 010101
+      RTAODenoise: "\x01\x01\x01"
       RTAODenoiserRadius:
       - 0.25
       - 0.5
@@ -250,19 +248,19 @@ MonoBehaviour:
       - 50
       - 50
       - 50
-      RTGIFullResolution: 000001
+      RTGIFullResolution: 
       RTGIClampValue:
       - 0.5
       - 0.8
       - 1.5
       RTGIUpScaleRadius: 040000000400000004000000
-      RTGIDenoise: 010101
-      RTGIHalfResDenoise: 010000
+      RTGIDenoise: "\x01\x01\x01"
+      RTGIHalfResDenoise: "\x01"
       RTGIDenoiserRadius:
       - 0.75
       - 0.5
       - 0.25
-      RTGISecondDenoise: 010101
+      RTGISecondDenoise: "\x01\x01\x01"
       RTRMinSmoothness:
       - 0.6
       - 0.4
@@ -279,10 +277,10 @@ MonoBehaviour:
       - 0.8
       - 1
       - 1.2
-      RTRFullResolution: 000001
-      RTRDenoise: 010101
+      RTRFullResolution: 
+      RTRDenoise: "\x01\x01\x01"
       RTRDenoiserRadius: 080000000c00000010000000
-      RTRSmoothDenoising: 010000
+      RTRSmoothDenoising: "\x01"
       Fog_ControlMode: 000000000000000000000000
       Fog_Budget:
       - 0.166
@@ -292,6 +290,7 @@ MonoBehaviour:
       - 0.666
       - 0.666
       - 0.5
+    m_ObsoleteincreaseSssSampleCount: 0
   allowShaderVariantStripping: 1
   enableSRPBatcher: 1
   shaderVariantLogLevel: 0
@@ -300,6 +299,7 @@ MonoBehaviour:
   diffusionProfileSettings: {fileID: 0}
   diffusionProfileSettingsList:
   - {fileID: 11400000, guid: 88b3b0ada35824a699ec8aedaedeaeb2, type: 2}
+  - {fileID: 11400000, guid: 664fd29217e9143e3990c3733c1775c3, type: 2}
   beforeTransparentCustomPostProcesses: []
   beforeTAACustomPostProcesses: []
   beforePostProcessCustomPostProcesses: []
@@ -309,6 +309,8 @@ MonoBehaviour:
     streamingGpuCacheSettings:
     - format: 0
       sizeInMegaBytes: 128
+  defineArray:
+  - 
   m_Version: 18
   m_ObsoleteFrameSettings:
     overrides: 0

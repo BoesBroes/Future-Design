@@ -13,7 +13,10 @@ public class TimeLine : MonoBehaviour
     public float waterEffectsVarX = 100;
     public float waterEffectsVarY = 100;
 
+    public Material skyboxMaterial;
+
     //TODO: check on weather effects
+    //- 
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +24,8 @@ public class TimeLine : MonoBehaviour
         //set some stuff
         slider = this.GetComponent<Slider>();
         slider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
+
+        RenderSettings.skybox = skyboxMaterial;
     }
 
     // Update is called once per frame
@@ -30,6 +35,8 @@ public class TimeLine : MonoBehaviour
         water.transform.position = new Vector3(water.transform.position.x, 50 + (slider.value * waterChangeVar), water.transform.position.z);
         water.GetComponent<NVWaterShaders>().rotateSpeed = new Vector2(1 + (slider.value * waterEffectsVarX), 1 + (slider.value * waterEffectsVarY));
         water.GetComponent<NVWaterShaders>().rotateDistance = new Vector2(1 + (slider.value * waterEffectsVarX), 1 + (slider.value * waterEffectsVarY));
+
+   
     }
 
 }
