@@ -24,6 +24,8 @@ public class TimeLine : MonoBehaviour
     public float emission = 1f;
     //TODO: check on other weather effects
 
+    public bool rising = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,9 +51,19 @@ public class TimeLine : MonoBehaviour
     public void ValueChangeCheck()
     {
         //change some stuff! 
-        water.transform.position = new Vector3(water.transform.position.x, baseWaterLevel + Mathf.Pow(slider.value * waterChangeVar, emission), water.transform.position.z);
-        water.GetComponent<NVWaterShaders>().rotateSpeed = new Vector2(1 + (slider.value * waterEffectsVarX), 1 + (slider.value * waterEffectsVarY));
-        water.GetComponent<NVWaterShaders>().rotateDistance = new Vector2(1 + (slider.value * waterEffectsVarX), 1 + (slider.value * waterEffectsVarY));
+        if(rising)
+        {
+            water.transform.position = new Vector3(water.transform.position.x, baseWaterLevel + Mathf.Pow(slider.value * waterChangeVar, emission), water.transform.position.z);
+            water.GetComponent<NVWaterShaders>().rotateSpeed = new Vector2(1 + (slider.value * waterEffectsVarX), 1 + (slider.value * waterEffectsVarY));
+            water.GetComponent<NVWaterShaders>().rotateDistance = new Vector2(1 + (slider.value * waterEffectsVarX), 1 + (slider.value * waterEffectsVarY));
+        }
+        else
+        {
+            water.transform.position = new Vector3(water.transform.position.x, baseWaterLevel - (Mathf.Pow(slider.value * waterChangeVar, emission) * 2.5f), water.transform.position.z);
+            water.GetComponent<NVWaterShaders>().rotateSpeed = new Vector2(1 + (slider.value * waterEffectsVarX), 1 + (slider.value * waterEffectsVarY));
+            water.GetComponent<NVWaterShaders>().rotateDistance = new Vector2(1 + (slider.value * waterEffectsVarX), 1 + (slider.value * waterEffectsVarY));
+        }
+        
     }
 
     public void ChangeEmission(GameObject thisObject)

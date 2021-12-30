@@ -14,13 +14,16 @@ public class LevelManager : MonoBehaviour
 
     private string lastScene;
 
+    //ben ik code vergeten te saven?:'^)
+
     // Start is called before the first frame update
     void Awake()
     {
         if (levelManager == null)
         {
             levelManager = this;
-            DontDestroyOnLoad(this);
+            //DontDestroyOnLoad(this);
+            //whatever:^)
         }
         else
         {
@@ -40,16 +43,15 @@ public class LevelManager : MonoBehaviour
     public void ChangeLevel(string level)
     {
         //loads new level if the scene exists and isnt disabled
-        if (Application.CanStreamedLevelBeLoaded(level))
-        {
+
             lastScene = SceneManager.GetActiveScene().name;
             SceneManager.LoadScene(level);
-        }
+        
 
-        else
-        {
-            Debug.LogError("Scene either does not exist or is disabled. Do you have the correct path?");
-        }
+        //else
+        //{
+        //    Debug.LogError("Scene either does not exist or is disabled. Do you have the correct path?");
+        //}
     }
 
 
