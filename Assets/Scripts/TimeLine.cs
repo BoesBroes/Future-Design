@@ -24,6 +24,9 @@ public class TimeLine : MonoBehaviour
     public float emission = 1f;
     //TODO: check on other weather effects
 
+    public Material skyboxMaterial;
+    public Material skyboxMaterial2;
+
     public bool rising = true;
 
     // Start is called before the first frame update
@@ -56,7 +59,7 @@ public class TimeLine : MonoBehaviour
             water.transform.position = new Vector3(water.transform.position.x, baseWaterLevel + Mathf.Pow(slider.value * waterChangeVar, emission), water.transform.position.z);
             water.GetComponent<NVWaterShaders>().rotateSpeed = new Vector2(1 + (slider.value * waterEffectsVarX), 1 + (slider.value * waterEffectsVarY));
             water.GetComponent<NVWaterShaders>().rotateDistance = new Vector2(1 + (slider.value * waterEffectsVarX), 1 + (slider.value * waterEffectsVarY));
-            skyboxMaterial.SetColor("_EmissionColor", skyboxMaterial2.color);
+            //skyboxMaterial.SetColor("_EmissionColor", skyboxMaterial2.color); //weet nu niet hoe dit precies is opgezet
         }
         else
         {
@@ -71,6 +74,19 @@ public class TimeLine : MonoBehaviour
     {
         thisObject.GetComponent<EmissionEnabled>().changeEmission();
         Debug.Log(emission);
+    }
+
+    public void ButtonColor(GameObject button)
+    {
+        if (button.GetComponent<Image>().color == Color.red)
+        {
+            button.GetComponent<Image>().color = Color.green;
+        }
+
+        else
+        {
+            button.GetComponent<Image>().color = Color.red;
+        }
     }
 
 }
